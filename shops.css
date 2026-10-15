@@ -1,0 +1,31 @@
+/* Общий стиль витрин; тема бренда — переменные по [data-brand]. Без внешних шрифтов и трекеров. */
+:root { --bg:#fff; --fg:#141414; --muted:#5a5a5a; --card:#fff; --line:#e4e4e4; --accent:#2f6bff; --accent-fg:#fff; --head:"Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --hw:800; }
+[data-brand=fox]   { --bg:#14181f; --fg:#ede6d8; --muted:#a9a79f; --card:#2a3445; --line:#3a4658; --accent:#c9a24a; --accent-fg:#14181f; --head:"Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --hw:700; }
+[data-brand=gecko] { --bg:#fff; --fg:#141414; --muted:#55595f; --card:#f4f7ff; --line:#a9c8ff; --accent:#2f6bff; --accent-fg:#fff; --hw:800; }
+[data-brand=mira]  { --bg:#f3eee7; --fg:#2b2b2b; --muted:#6b6258; --card:#fbf8f4; --line:#ddd3c6; --accent:#5b2a4a; --accent-fg:#f3eee7; --head:"Fraunces",Georgia,"Times New Roman",serif; --body:system-ui,-apple-system,"Segoe UI",sans-serif; --hw:600; }
+[data-brand=nora]  { --bg:#faf7f2; --fg:#22303c; --muted:#5d6a74; --card:#fff; --line:#e3ddd2; --accent:#2e7d5b; --accent-fg:#fff; --head:"Manrope","Inter",system-ui,sans-serif; --body:"Manrope","Inter",system-ui,sans-serif; --hw:800; }
+[data-brand=ted]   { --bg:#f7f1e5; --fg:#4a3b2a; --muted:#7a6a55; --card:#fffaf0; --line:#e0d4bd; --accent:#a65d42; --accent-fg:#fffaf0; --head:"Bitter",Georgia,serif; --body:Georgia,"Times New Roman",serif; --hw:700; }
+
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font-family:var(--body); line-height:1.5; }
+.hero, main, footer { max-width:1080px; margin:0 auto; padding:0 16px; }
+.hero { display:flex; gap:20px; align-items:center; padding-top:40px; padding-bottom:28px; }
+.avatar { width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); flex:none; }
+h1, h2 { font-family:var(--head); font-weight:var(--hw); margin:0; line-height:1.15; }
+h1 { font-size:clamp(1.7rem,5vw,2.6rem); }
+.tagline { margin:.4rem 0 0; color:var(--muted); font-size:1.05rem; }
+.ai { margin:.5rem 0 0; font-size:.85rem; color:var(--muted); border-left:3px solid var(--accent); padding-left:.6rem; }
+.grid { list-style:none; margin:0; padding:0; display:grid; gap:20px; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+.cover img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+.body { padding:16px; display:flex; flex-direction:column; gap:10px; flex:1; }
+h2 { font-size:1.15rem; }
+.body p { margin:0; color:var(--muted); font-size:.95rem; flex:1; }
+.buy { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.price { font-family:var(--head); font-weight:var(--hw); font-size:1.4rem; }
+.btn { background:var(--accent); color:var(--accent-fg); text-decoration:none; font-weight:700; padding:.65rem 1.6rem; border-radius:999px; min-height:44px; display:inline-flex; align-items:center; }
+.btn:hover, .btn:focus-visible { filter:brightness(1.1); outline:2px solid var(--fg); outline-offset:2px; }
+footer { padding-top:36px; padding-bottom:40px; color:var(--muted); font-size:.9rem; text-align:center; }
+footer p { margin:.2rem 0; } footer .small { font-size:.8rem; }
+.root { list-style:none; padding:40px 0; font-size:1.3rem; }
+@media (max-width:520px) { .hero { flex-direction:column; text-align:center; padding-top:28px; } .ai { text-align:left; } }
